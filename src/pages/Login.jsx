@@ -44,8 +44,8 @@ const LoginArea = styled.div`
 const Login = (props) => {
   const user = getItem("usuario");
 
-  const [nome, setNome] = useState(user.nome || "");
-  const [senha, setSenha] = useState(user.senha || "");
+  const [nome, setNome] = useState(user?.nome || "");
+  const [senha, setSenha] = useState(user?.senha || "");
   const [passIncorrect, setPassIncorrect] = useState(false);
 
   const cond = nome.length > 3 && senha.length > 4;
