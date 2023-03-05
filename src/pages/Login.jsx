@@ -52,10 +52,10 @@ const Login = (props) => {
 
   const saveUser = (nome, senha) => {
     const { history } = props;
-    if (nome === user.nome && senha === user.senha) {
+    if (nome === user?.nome && senha === user?.senha) {
       history.push("/store");
       return;
-    } else if (nome === user.nome && senha !== user.senha) {
+    } else if (nome === user?.nome && senha !== user?.senha) {
       setPassIncorrect(true);
       return;
     }
