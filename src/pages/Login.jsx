@@ -67,13 +67,13 @@ const Login = (props) => {
       <LoginArea>
         <input
           type="text"
-          placeholder="Nome"
+          placeholder="O nome deve ter mais de 3 caracteres..."
           onChange={({ target: { value } }) => setNome(value)}
           value={nome}
         />
         <input
           type="password"
-          placeholder="Senha"
+          placeholder="A senha deve ter mais de 5 caracteres..."
           onChange={({ target: { value } }) => setSenha(value)}
           value={senha}
         />

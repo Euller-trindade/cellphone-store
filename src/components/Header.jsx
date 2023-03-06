@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import {BsFillCartFill} from 'react-icons/bs'
+import {FaStoreAlt, FaUserCheck} from 'react-icons/fa'
+import {CgProfile} from 'react-icons/cg'
 
 const HeaderArea = styled.div`
   display: flex;
@@ -18,6 +21,7 @@ const HeaderArea = styled.div`
   a {
     color: white;
     font-weight: bold;
+    font-size: 1.5rem;
     text-decoration: none;
     transition: 0.5s;
     gap: 10px;
@@ -31,13 +35,13 @@ const HeaderArea = styled.div`
 const Header = () => {
   return (
     <HeaderArea>
-      <h1>
+      <h2>
         <Link to="/">cellphone store</Link>
-      </h1>
+      </h2>
       <div>
-        <Link to="/store">Loja</Link>
-        <Link to="/cart">Carrinho</Link>
-        <Link to="/profile">Meu Perfil</Link>
+        <Link to="/store"><FaStoreAlt/></Link>
+        <Link to="/cart"><BsFillCartFill/></Link>
+        <Link to="/profile"><FaUserCheck/></Link>
       </div>
     </HeaderArea>
   );
