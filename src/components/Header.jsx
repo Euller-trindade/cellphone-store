@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {BsFillCartFill} from 'react-icons/bs'
 import {FaStoreAlt, FaUserCheck} from 'react-icons/fa'
-import {CgProfile} from 'react-icons/cg'
 
 const HeaderArea = styled.div`
   display: flex;

@@ -5,16 +5,22 @@ import { setItem, getItem } from "../services/LocalStorageFuncs";
 
 const LoginArea = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  max-width: 360px;
-  margin: 0 auto;
-  margin-top: 90px;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: azure;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 360px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: azure;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+  }
   input {
     padding: 15px;
     margin-bottom: 10px;
@@ -65,26 +71,28 @@ const Login = (props) => {
   return (
     <>
       <LoginArea>
-        <input
-          type="text"
-          placeholder="O nome deve ter mais de 3 caracteres..."
-          onChange={({ target: { value } }) => setNome(value)}
-          value={nome}
-        />
-        <input
-          type="password"
-          placeholder="A senha deve ter mais de 5 caracteres..."
-          onChange={({ target: { value } }) => setSenha(value)}
-          value={senha}
-        />
-        {passIncorrect === true && <p>senha incorreta!</p>}
-        <button
-          type="button"
-          disabled={!cond}
-          onClick={() => saveUser(nome, senha)}
-        >
-          Entrar
-        </button>
+        <div>
+          <input
+            type="text"
+            placeholder="O nome deve ter mais de 3 caracteres..."
+            onChange={({ target: { value } }) => setNome(value)}
+            value={nome}
+          />
+          <input
+            type="password"
+            placeholder="A senha deve ter mais de 5 caracteres..."
+            onChange={({ target: { value } }) => setSenha(value)}
+            value={senha}
+          />
+          {passIncorrect === true ? <p>senha incorreta!</p> : ''}
+          <button
+            type="button"
+            disabled={!cond}
+            onClick={() => saveUser(nome, senha)}
+          >
+            Entrar
+          </button>
+        </div>
       </LoginArea>
       <Footer />
     </>

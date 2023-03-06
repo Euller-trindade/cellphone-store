@@ -7,10 +7,13 @@ import styled from "styled-components";
 
 const Btncart = styled.div`
   button {
+
     background: #005f4b;
     border: 0;
     border-radius: 5px;
     padding: 10px;
+    width: 210px;
+    margin-bottom: 40px;
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
@@ -39,7 +42,7 @@ const Cart = (props) => {
       <h4>{`SubTotal: R$ ${subTotal}`}</h4>
       <ProductsArea>
         {data.map((e) => (
-          <div>
+          <div key={e.id}>
             <h5>{e.title}</h5>
             <img src={e.thumbnail} alt="" />
             <h4>R$ {e.price}</h4>

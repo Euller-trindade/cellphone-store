@@ -13,7 +13,7 @@ const Store = () => {
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
-  }, 2000);
+  }, 2500);
   const [data, setData] = useState([]);
   const [cart, setCart] = useState(getItem("carrinhoAdd") || []);
   useEffect(() => {
@@ -40,22 +40,22 @@ const Store = () => {
       {loading ? (
         <Loading />
       ) : (
-      <ProductsArea>
-        {data.map((e) => (
-          <div>
-            <h5>{e.title}</h5>
-            <img src={e.thumbnail} alt="" />
-            <h4>R$ {e.price}</h4>
-            <button onClick={() => handleClick(e)}>
-              {cart.some((itemCart) => itemCart.id === e.id) ? (
-                <BsFillCartCheckFill />
-              ) : (
-                <BsFillCartPlusFill />
-              )}
-            </button>
-          </div>
-        ))}
-      </ProductsArea>
+        <ProductsArea>
+          {data.map((e) => (
+            <div key={e.id}>
+              <h5>{e.title}</h5>
+              <img src={e.thumbnail} alt="" />
+              <h4>R$ {e.price}</h4>
+              <button onClick={() => handleClick(e)}>
+                {cart.some((itemCart) => itemCart.id === e.id) ? (
+                  <BsFillCartCheckFill />
+                ) : (
+                  <BsFillCartPlusFill />
+                )}
+              </button>
+            </div>
+          ))}
+        </ProductsArea>
       )}
       <Footer />
     </div>
